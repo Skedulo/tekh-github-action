@@ -28,7 +28,7 @@ Whether the version has changed
 ## Example usage
 
 ```
-uses: Skedulo/tekh@v1
+uses: Skedulo/tekh-action@v1
 with:
   chart: karpenter/karpenter
   url: https://charts.karpenter.sh
