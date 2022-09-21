@@ -10,6 +10,8 @@ This action updates a tekh repository to latest version
 
 * `chart` *Required* The name of the helm chart to use
 * `url` *Required* The url of the helm repository containing the chart
+* `name` *Required* The name of the application
+* `namespace` *Required* The namespace in which to install the application
 * `values` - path to a values file to use - defaults to none
 * `additional` - additional arguments to pass to helm - defaults to none
 * `update_documentation` - whether to update the documentation - defaults to false
@@ -32,6 +34,8 @@ uses: Skedulo/tekh-action@v1
 with:
   chart: karpenter/karpenter
   url: https://charts.karpenter.sh
+  name: karpenter
+  namespace: karpenter
   values: values.yaml
   additional: -a policy/v1
   update_documentation: true

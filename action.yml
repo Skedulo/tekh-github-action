@@ -8,6 +8,12 @@ inputs:
   url:
     description: helm url to use
     required: true
+  namespace:
+    description: namespace in which to install the application
+    required: true
+  name:
+    description: name of the application to install
+    required: true
   values:
     description: values file to use
     required: false
