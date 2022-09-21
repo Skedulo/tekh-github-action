@@ -46,7 +46,7 @@ outputs:
 runs:
   using: 'docker'
   image: docker://public.ecr.aws/skedulo/tekh:v0.7.3-2-g081c726
-  command: /action.sh
+  entrypoint: /action.sh
   args:
     - ${{ inputs.working_directory }}
     - ${{ inputs.chart }}
