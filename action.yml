@@ -31,6 +31,11 @@ inputs:
       Documentation file to update if `update_documentation` is `true` (default README.md)
     required: false
     default: 'README.md'
+  working_directory:
+    description: >
+      Path in which to run tekh
+    required: false
+    default: /github/workspace
 outputs:
   version:
     description: Chart version of upgrade
@@ -43,7 +48,7 @@ runs:
   image: docker://public.ecr.aws/skedulo/tekh:v0.7.3-2-g081c726
   command: /action.sh
   args:
-    - ${{ env.GITHUB_WORKSPACE }}
+    - ${{ inputs.working_directory }}
     - ${{ inputs.chart }}
     - ${{ inputs.url }}
     - ${{ inputs.name }}
