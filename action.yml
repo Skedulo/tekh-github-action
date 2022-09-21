@@ -34,7 +34,7 @@ outputs:
     description: Commit message generated from version change
 runs:
   using: 'docker'
-  image: public.ecr.aws/skedulo/tekh:v0.7.3-1-gef24835
+  image: docker://public.ecr.aws/skedulo/tekh:v0.7.3-1-gef24835
   args:
     - ${{ inputs.chart }}
     - ${{ inputs.url }}
