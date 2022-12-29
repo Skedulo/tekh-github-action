@@ -7,7 +7,8 @@ inputs:
     required: true
   url:
     description: helm url to use
-    required: true
+    required: false
+    default: "__UNSET__"
   namespace:
     description: namespace in which to install the application
     required: true
@@ -45,7 +46,7 @@ outputs:
     description: Commit message generated from version change
 runs:
   using: 'docker'
-  image: docker://public.ecr.aws/skedulo/tekh:v0.7.4-2-g2e2f81e
+  image: docker://public.ecr.aws/skedulo/tekh:v0.7.4-4-g3e6b1cc
   entrypoint: /action.sh
   args:
     - ${{ inputs.working_directory }}

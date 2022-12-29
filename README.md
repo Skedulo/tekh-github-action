@@ -9,9 +9,9 @@ This action updates a tekh repository to latest version
 ## Inputs
 
 * `chart` *Required* The name of the helm chart to use
-* `url` *Required* The url of the helm repository containing the chart
 * `name` *Required* The name of the application
 * `namespace` *Required* The namespace in which to install the application
+* `url` The url of the helm repository containing the chart
 * `values` - path to a values file to use - defaults to none
 * `additional` - additional arguments to pass to helm - defaults to none
 * `update_documentation` - whether to update the documentation - defaults to false
