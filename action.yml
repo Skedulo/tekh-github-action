@@ -23,6 +23,12 @@ inputs:
     description: Any additional arguments to pass to tekh
     required: false
     default: "__UNSET__"
+  ignore_as_changes:
+    description: >
+      Comma-separated list of words to ignore when considering whether a repo has changed.
+      For example, helm.sh/chart,checksum/ to ignore non-functional chart version bumps
+    required: false
+    default: "__UNSET__"
   update_documentation:
     description: 'Whether to update the documentation (default false)'
     required: false
@@ -46,7 +52,7 @@ outputs:
     description: Commit message generated from version change
 runs:
   using: 'docker'
-  image: docker://public.ecr.aws/skedulo/tekh:v0.7.4-4-g3e6b1cc
+  image: docker://public.ecr.aws/skedulo/tekh:v0.7.4-6-g158d660
   entrypoint: /action.sh
   args:
     - ${{ inputs.working_directory }}
