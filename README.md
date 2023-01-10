@@ -14,6 +14,9 @@ This action updates a tekh repository to latest version
 * `url` The url of the helm repository containing the chart
 * `values` - path to a values file to use - defaults to none
 * `additional` - additional arguments to pass to helm - defaults to none
+* `ignore` - comma-separated list of words to ignore when considering whether
+  a repo has changed. For example, helm.sh/chart,checksum/ to ignore
+  non-functional chart version bumps - defaults to none
 * `update_documentation` - whether to update the documentation - defaults to false
 * `documentation_file` - file to update - defaults to README.md
 * `working_directory` - path in which to run tekh - defaults to /github/workspace

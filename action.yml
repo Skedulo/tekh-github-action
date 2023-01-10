@@ -23,7 +23,7 @@ inputs:
     description: Any additional arguments to pass to tekh
     required: false
     default: "__UNSET__"
-  ignore_as_changes:
+  ignore:
     description: >
       Comma-separated list of words to ignore when considering whether a repo has changed.
       For example, helm.sh/chart,checksum/ to ignore non-functional chart version bumps
