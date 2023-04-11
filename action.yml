@@ -52,7 +52,7 @@ outputs:
     description: Commit message generated from version change
 runs:
   using: 'docker'
-  image: docker://public.ecr.aws/skedulo/tekh:v0.7.8-0-gc724fea
+  image: docker://public.ecr.aws/skedulo/tekh:v0.7.8
   entrypoint: /action.sh
   args:
     - ${{ inputs.working_directory }}
