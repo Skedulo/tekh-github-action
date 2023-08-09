@@ -19,6 +19,10 @@ inputs:
     description: values file to use
     required: false
     default: "__UNSET__"
+  version:
+    description: version to use
+    required: false
+    default: "__UNSET__"
   additional:
     description: Any additional arguments to pass to tekh
     required: false
@@ -57,7 +61,7 @@ outputs:
     description: Commit message generated from version change
 runs:
   using: 'docker'
-  image: docker://public.ecr.aws/skedulo/tekh:v0.7.8-4-g305b2ce
+  image: docker://public.ecr.aws/skedulo/tekh:v0.7.8-6-g74382ae
   entrypoint: /action.sh
   args:
     - ${{ inputs.working_directory }}
@@ -71,3 +75,4 @@ runs:
     - ${{ inputs.documentation_file }}
     - ${{ inputs.ignore }}
     - ${{ inputs.custom_image_name }}
+    - ${{ inputs.version }}
