@@ -11,7 +11,8 @@ inputs:
     default: "__UNSET__"
   namespace:
     description: namespace in which to install the application
-    required: true
+    required: false
+    default: "__UNSET__"
   name:
     description: name of the application to install
     required: true
