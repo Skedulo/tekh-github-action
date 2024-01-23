@@ -21,6 +21,8 @@ This action updates a tekh repository to latest version
 * `update_documentation` - whether to update the documentation - defaults to false
 * `documentation_file` - file to update - defaults to README.md
 * `working_directory` - path in which to run tekh - defaults to /github/workspace
+* `version_label` - label to look at to determine chart version - defaults to
+  `helm.sh/chart`
 
 ## Outputs
 
