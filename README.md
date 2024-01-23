@@ -13,6 +13,7 @@ This action updates a tekh repository to latest version
 * `namespace` *Required* The namespace in which to install the application
 * `url` The url of the helm repository containing the chart
 * `values` - path to a values file to use - defaults to none
+* `version` - version of chart to use - defaults to none (i.e. latest)
 * `additional` - additional arguments to pass to helm - defaults to none
 * `ignore` - comma-separated list of words to ignore when considering whether
   a repo has changed. For example, helm.sh/chart,checksum/ to ignore
@@ -20,6 +21,8 @@ This action updates a tekh repository to latest version
 * `update_documentation` - whether to update the documentation - defaults to false
 * `documentation_file` - file to update - defaults to README.md
 * `working_directory` - path in which to run tekh - defaults to /github/workspace
+* `version_label` - label to look at to determine chart version - defaults to
+  `helm.sh/chart`
 
 ## Outputs
 

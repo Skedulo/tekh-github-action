@@ -11,12 +11,17 @@ inputs:
     default: "__UNSET__"
   namespace:
     description: namespace in which to install the application
-    required: true
+    required: false
+    default: "__UNSET__"
   name:
     description: name of the application to install
     required: true
   values:
     description: values file to use
+    required: false
+    default: "__UNSET__"
+  version:
+    description: version to use
     required: false
     default: "__UNSET__"
   additional:
@@ -48,6 +53,10 @@ inputs:
       An option to pass in a custom image tag to base the versioning off. This should only be done for projects that do not contain a helm version
     required: false
     default: "__UNSET__"
+  version_label:
+    description: >
+      Label to look for helm chart version
+    default: "helm.sh/chart"
 outputs:
   version:
     description: Chart version of upgrade
@@ -57,7 +66,7 @@ outputs:
     description: Commit message generated from version change
 runs:
   using: 'docker'
-  image: docker://public.ecr.aws/skedulo/tekh:v0.8.0-2-g9029bdc
+  image: docker://public.ecr.aws/skedulo/tekh:v0.8.1-4-gd3baecc
   entrypoint: /action.sh
   args:
     - ${{ inputs.working_directory }}
@@ -71,3 +80,5 @@ runs:
     - ${{ inputs.documentation_file }}
     - ${{ inputs.ignore }}
     - ${{ inputs.custom_image_name }}
+    - ${{ inputs.version }}
+    - ${{ inputs.version_label }}
