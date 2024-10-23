@@ -23,6 +23,8 @@ This action updates a tekh repository to latest version
 * `working_directory` - path in which to run tekh - defaults to /github/workspace
 * `version_label` - label to look at to determine chart version - defaults to
   `helm.sh/chart`
+* `app_version_label` - label to look at to determine app version - defaults to
+  `app.kubernetes.io/version`
 
 ## Outputs
 
@@ -33,6 +35,9 @@ The version of helm after running tekh
 ## `changed`
 
 Whether the version has changed
+
+## `app_version`
+The version of the application after running tekh
 
 ## Example usage
 
