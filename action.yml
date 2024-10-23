@@ -57,7 +57,13 @@ inputs:
     description: >
       Label to look for helm chart version
     default: "helm.sh/chart"
+  app_version_label:
+    description: >
+      Label to look for internal application version
+    default: "app.kubernetes.io/version"
 outputs:
+  app_version:
+    description: Chart version of upgrade
   version:
     description: Chart version of upgrade
   changed:
@@ -66,7 +72,7 @@ outputs:
     description: Commit message generated from version change
 runs:
   using: 'docker'
-  image: docker://public.ecr.aws/skedulo/tekh:v0.8.1-10-g5b44a4d
+  image: docker://public.ecr.aws/skedulo/tekh:v0.8.2-2-gd450b41
   entrypoint: /action.sh
   args:
     - ${{ inputs.working_directory }}
@@ -82,3 +88,4 @@ runs:
     - ${{ inputs.custom_image_name }}
     - ${{ inputs.version }}
     - ${{ inputs.version_label }}
+    - ${{ inputs.app_version_label }}
